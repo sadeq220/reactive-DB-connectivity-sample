@@ -18,4 +18,7 @@ public class UserDomain {
     @Column("email")
     private String email;
 
+    // There is no official way to create an entity relation
+    // like @OneToOne or @ManyToOne as in JPA
+
 }

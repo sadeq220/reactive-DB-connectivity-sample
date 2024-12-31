@@ -23,6 +23,7 @@ public class UserService implements UserPort {
         userDomain.setId(username);
         userDomain.setEmail(email);
         userDomain.setName(name);
+        // userRepository.save(userDomain);// when entity.id is not null, r2dbc tries to update instead of insert
         Mono<UserDomain> savedDomain = r2dbcEntityTemplate.insert(userDomain);
         return savedDomain.map(userDomain1 -> new UserValue(userDomain1.getId(), userDomain1.getEmail()));
     }
