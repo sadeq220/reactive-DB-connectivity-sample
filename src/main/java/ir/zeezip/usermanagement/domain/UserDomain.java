@@ -18,7 +18,8 @@ public class UserDomain {
     @Column("email")
     private String email;
 
-    // There is no official way to create an entity relation
+    // There is no official way to create an entity association
     // like @OneToOne or @ManyToOne as in JPA
+    // use Micronaut framework for better association handling as well as r2dbc support
 
 }
